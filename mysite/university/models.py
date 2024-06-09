@@ -77,7 +77,7 @@ class RegistrationCourse(models.Model):
     grade = models.CharField(max_length=2, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.student} enrolled in {self.course}"
+        return f"{self.student} - {self.course}"
 
 
 class HomeWork(models.Model):
@@ -87,7 +87,7 @@ class HomeWork(models.Model):
     due_date = models.DateField()
 
     def __str__(self):
-        return f"{self.title} for {self.course}"
+        return f"{self.title} - {self.course}"
 
 
 class CheckHomeWork(models.Model):
@@ -98,4 +98,4 @@ class CheckHomeWork(models.Model):
     feedback = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.student}'s submission for {self.assignment}"
+        return f"{self.student} - {self.assignment}"
